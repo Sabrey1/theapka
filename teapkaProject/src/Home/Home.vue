@@ -1,14 +1,16 @@
 <template>
-    <div>
-        <ComBanner />
-        <ComWelcome />
-        <ComImageWedding />
-        <ComWeddingProgram />
-        <PaymentQR />
-        <ComMap />
-        <ComWeddingWishes />
-        <ComThankYou />
-    </div>
+    <ion-page>
+        <ion-content>
+            <ComBanner />
+            <ComWelcome />
+            <ComImageWedding />
+            <ComWeddingProgram />
+            <PaymentQR />
+            <ComMap />
+            <ComWeddingWishes />
+            <ComThankYou />
+        </ion-content>
+    </ion-page>
 </template>
 
 <script setup>
@@ -20,4 +22,6 @@ import ComWeddingWishes from "@/Home/components/ComWeddingWishes.vue"
 import ComThankYou from "@/Home/components/ComThankYou.vue"
 import ComImageWedding from "@/Home/components/ComImageWedding.vue"
 import ComWeddingProgram from "@/Home/components/ComWeddingProgram.vue"
+
+import { IonPage, IonContent } from "@ionic/vue"
 </script>
