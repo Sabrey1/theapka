@@ -47,3 +47,184 @@
   }
  
 }
+
+/* ------------------------------------------------------------------ */
+/*  Wedding invitation design tokens                                   */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-ivory: #faf6ee;
+  --color-cream: #f4ecdf;
+  --color-sand: #e7d9c4;
+  --color-plum: #4b2534;
+  --color-plum-deep: #331722;
+  --color-rose: #a65f68;
+  --color-gold: #a3793c;
+  --color-gold-soft: #d9bd8f;
+  --color-ink: #3d2b27;
+
+  --font-display: "Cormorant Garamond", "Noto Serif Khmer", Georgia, serif;
+  --font-khmer: "Noto Serif Khmer", "Cormorant Garamond", serif;
+  --font-khmer-display: "Moul", "Noto Serif Khmer", serif;
+}
+
+html,
+body {
+  background-color: #faf6ee;
+}
+
+body {
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(183, 138, 76, 0.28);
+  color: #331722;
+}
+
+/* Ionic surfaces ---------------------------------------------------- */
+ion-content.home-content {
+  --background: #faf6ee;
+  --color: #3d2b27;
+}
+
+/* Khmer copy needs a little more breathing room ---------------------- */
+.khmer-copy {
+  line-height: 1.95;
+  letter-spacing: 0.01em;
+  text-wrap: pretty;
+}
+
+/* Scroll reveal ------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Small ornaments ---------------------------------------------------- */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-floaty {
+  animation: floaty 7s ease-in-out infinite;
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-down {
+  animation: fade-down 0.35s ease-out both;
+}
+
+.text-shadow-soft {
+  text-shadow: 0 2px 30px rgba(24, 8, 14, 0.45);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Buttons and links                                                  */
+/*  Ionic's global element styles are unlayered, so they win over      */
+/*  Tailwind utilities. These few components are unlayered on purpose. */
+/* ------------------------------------------------------------------ */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.78rem 1.75rem;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.cta-gold {
+  background-color: var(--color-gold-soft);
+  color: var(--color-plum-deep);
+}
+
+.cta-gold:hover {
+  background-color: var(--color-ivory);
+}
+
+.cta-ghost {
+  border-color: rgba(250, 246, 238, 0.45);
+  background-color: transparent;
+  color: var(--color-ivory);
+}
+
+.cta-ghost:hover {
+  border-color: rgba(250, 246, 238, 0.85);
+  background-color: rgba(250, 246, 238, 0.1);
+}
+
+.cta-plum {
+  background-color: var(--color-plum);
+  color: var(--color-ivory);
+}
+
+.cta-plum:hover {
+  background-color: var(--color-plum-deep);
+}
+
+.btn-pill {
+  border-radius: 9999px;
+}
+
+.scroll-cue {
+  color: rgba(250, 246, 238, 0.55);
+  transition: color 0.2s ease;
+}
+
+.scroll-cue:hover,
+.scroll-cue:focus-visible {
+  color: var(--color-ivory);
+}
+
